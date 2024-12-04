@@ -13,6 +13,7 @@ import {
 import { faCopy } from "@fortawesome/free-solid-svg-icons";
 import Navbar from "../components/Navbar";
 import Loading from "../components/Loader";
+import PaymentPage from "../components/payment";
 
 const Donate = () => {
   const [showOptions, setShowOptions] = useState(false);
@@ -113,6 +114,13 @@ const Donate = () => {
     },
   ];
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000); // Simulate loading
+
+    return () => clearTimeout(timer);
+  }, []);
   
   return (
     <>
@@ -144,9 +152,7 @@ const Donate = () => {
                 <h3 className="text-2xl font-bold mb-4">Donate Now</h3>
                 <div id="monify-form">
                   {/* Placeholder for the Monify form */}
-                  <p className="text-gray-600 mb-4">
-                    The payment form will appear here.
-                  </p>
+                 <PaymentPage/>
                   <button
                     className={`bg-green-500 text-white py-2 px-4 rounded-lg shadow hover:bg-green-600 ${
                       isLoading ? "opacity-50 cursor-not-allowed" : ""

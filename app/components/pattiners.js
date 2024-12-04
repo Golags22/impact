@@ -5,7 +5,7 @@ const PatternSlider = () => {
    "/images/brands/b1.png",
    "/images/brands/b2.png",
    "/images/brands/b3.png",
-   "/images/brands/b1.png",
+   "/images/brands/b4.jpg",
    "/images/brands/b1.png",
   ];
 
@@ -16,9 +16,9 @@ const PatternSlider = () => {
       </div>
 
       {/* Sliding container */}
-      <div className="flex w-[200%] animate-slide">
+      <div className="flex w-[100%] animate-slide">
         {images.map((image, index) => (
-          <div key={index} className="w-[300px] mx-2 flex-shrink-0">
+          <div key={index} className="w-[600px] mx-2 flex-shrink-0">
             <img
               src={image}
               alt={`Partner ${index + 1}`}

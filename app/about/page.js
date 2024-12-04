@@ -4,8 +4,21 @@ import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ScrollToTopButton from "../scrollbtn";
-import { FaStar, FaHandsHelping, FaShieldAlt, FaUsers, FaHeart, FaLightbulb } from "react-icons/fa";
+import {
+  FaStar,
+  FaHandsHelping,
+  FaShieldAlt,
+  FaUsers,
+  FaHeart,
+  FaLightbulb,
+  FaMedal,
+  FaHandshake,
+  FaLock,
+  FaInfinity,
+} from "react-icons/fa";
 import Loading from "../components/Loader";
+import Cardinals from "../components/cardinals";
+
 
 const About = () => {
   const images = [
@@ -89,6 +102,50 @@ const About = () => {
             </div>
           </section>
 
+
+       {/* Core Values Section */}
+       <section id="core-values" className="py-16 bg-white">
+            <div className="container mx-auto text-center">
+              <h2 className="text-4xl font-semibold text-gray-800 mb-8">
+                CORE <span className="text-orange-500">VALUES</span>
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="p-6 bg-gray-100 rounded-lg shadow-lg text-center">
+                  <div className="text-4xl text-blue-500 mb-4">
+                    <FaMedal aria-label="Excellence Icon" />
+                  </div>
+                  <h3 className="text-2xl font-semibold text-gray-800 mb-2">Excellence</h3>
+                  <p className="text-gray-600">Striving for the highest standards in all we do.</p>
+                </div>
+                <div className="p-6 bg-gray-100 rounded-lg shadow-lg text-center">
+                  <div className="text-4xl text-green-500 mb-4">
+                    <FaHandshake aria-label="Commitment Icon" />
+                  </div>
+                  <h3 className="text-2xl font-semibold text-gray-800 mb-2">Commitment</h3>
+                  <p className="text-gray-600">Dedicated to creating lasting impacts in communities.</p>
+                </div>
+                <div className="p-6 bg-gray-100 rounded-lg shadow-lg text-center">
+                  <div className="text-4xl text-yellow-500 mb-4">
+                    <FaLock aria-label="Integrity Icon" />
+                  </div>
+                  <h3 className="text-2xl font-semibold text-gray-800 mb-2">Integrity</h3>
+                  <p className="text-gray-600">Upholding honesty and strong moral principles.</p>
+                </div>
+                <div className="p-6 bg-gray-100 rounded-lg shadow-lg text-center">
+                  <div className="text-4xl text-purple-500 mb-4">
+                    <FaInfinity aria-label="Unity Icon" />
+                  </div>
+                  <h3 className="text-2xl font-semibold text-gray-800 mb-2">Unity</h3>
+                  <p className="text-gray-600">Fostering teamwork and collaboration in all activities.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Other Sections */}
+          <section id="cardinals-section" className="bg-gray-50 p-8 border border-gray-300">
+            <Cardinals />
+          </section>
           {/* Team Section */}
           <section id="team" className="py-16 bg-white cursor-pointer">
             <div className="container mx-auto text-center">
@@ -136,7 +193,7 @@ const About = () => {
             </div>
           </section>
 
-          {/* Partners Section */}
+          {/* Group head Section */}
           <div className="relative w-full h-[400px] mb-10 overflow-hidden bg-gray-100">
             <div className="text-center pt-5">
               <h2 className="text-2xl font-bold text-gray-800 mb-4">Group Heads</h2>

@@ -85,6 +85,124 @@ export default function Blog() {
           </div>
         </div>
       </section>
+      {/* Past Blog Posts */}
+      <section id="latest-posts" className="container mx-auto py-16 px-4 text-center">
+        <h2 className="text-3xl font-bold mb-6">Past Blog Posts</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <img src="/images/blog/img-13.jpg" alt="Blog Post 1" className="w-full h-48 object-cover" />
+            <div className="p-6">
+              <h3 className="text-xl font-semibold">Our Annual Fundraising Gala 2024: A Huge Success</h3>
+              <p className="mt-4 text-lg">Our fundraising event helped raise $100K for community education projects...</p>
+              <Link href="/images/blog/img-13.jpg" className="text-orange-500 mt-4 inline-block">Read More</Link>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <img src="/images/blog/img-v.jpg" alt="Blog Post 2" className="w-full h-48 object-cover" />
+            <div className="p-6">
+              <h3 className="text-xl font-semibold">The Power of Volunteerism: How You Can Make a Difference</h3>
+              <p className="mt-4 text-lg">Our volunteers are the backbone of our work, and you can make an impact by joining our volunteer team.</p>
+              <Link href="/blog/volunteerism-power" className="text-orange-500 mt-4 inline-block">Read More</Link>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <img src="/images/blog/img-v.jpg" alt="Blog Post 2" className="w-full h-48 object-cover" />
+            <div className="p-6">
+              <h3 className="text-xl font-semibold">The Power of Volunteerism: How You Can Make a Difference</h3>
+              <p className="mt-4 text-lg">Our volunteers are the backbone of our work, and you can make an impact by joining our volunteer team.</p>
+              <Link href="/blog/volunteerism-power" className="text-orange-500 mt-4 inline-block">Read More</Link>
+            </div>
+          </div>
+
+          {/* Video Testimony */}
+      <div className="bg-white rounded-lg shadow-md p-6">
+        <div className="relative">
+          <img
+            src="/images/video-placeholder.jpg"
+            alt="Video testimony"
+            className="w-full h-40 object-cover rounded-md"
+          />
+          <a
+            href="https://fb.watch/wfmJRIt7hY/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 hover:bg-opacity-70 transition"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              className="w-12 h-12 text-white"
+            >
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </a>
+        </div>
+        <p className="text-gray-700 mt-4">
+         Impact for Xploit Conference 2021 live on Facebook.
+        </p>
+        <p className="text-sm text-gray-500">- Video Testimony</p>
+      </div>
+      <div className="bg-white rounded-lg shadow-md p-6">
+        <div className="relative">
+          <img
+            src="/images/video-placeholder.jpg"
+            alt="Video testimony"
+            className="w-full h-40 object-cover rounded-md"
+          />
+          <a
+            href="https://fb.watch/wfnxNa8irY/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 hover:bg-opacity-70 transition"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              className="w-12 h-12 text-white"
+            >
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </a>
+        </div>
+        <p className="text-gray-700 mt-4">
+         Impact for Xploit Conference 2021 live on Facebook.
+        </p>
+        <p className="text-sm text-gray-500">- Video Testimony</p>
+      </div>
+      <div className="bg-white rounded-lg shadow-md p-6">
+        <div className="relative">
+          <img
+            src="/images/blog/ogbe.jpg"
+            alt="Video testimony"
+            className="w-full h-40 object-cover rounded-md"
+          />
+          <a
+            href="https://fb.watch/wfnP5SFN-O/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 hover:bg-opacity-70 transition"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              className="w-12 h-12 text-white"
+            >
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </a>
+        </div>
+        <p className="text-gray-700 mt-4">
+        Ogbe-ijoh Community Outreach
+        </p>
+        <p className="text-sm text-gray-500">- Video Testimony</p>
+      </div>
+        </div>
+      </section>
 
       {/* Newsletter Signup */}
       <section className="bg-gray-800 text-white py-16 text-center">
