@@ -39,7 +39,7 @@ export default function Home() {
           <Testimonials />
           <Bloginto />
           <PatternSlider />
-          <DonationNotification />
+          {/* <DonationNotification /> */}
           <Footer />
           <ScrollToTopButton />
         </div>
