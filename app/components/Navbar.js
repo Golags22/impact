@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 const Navbar = () => {
-  const router = useRouter();
+  const router = typeof window !== 'undefined' ? useRouter() : null; // Ensure safe usage of useRouter
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeLink, setActiveLink] = useState('/'); // Track active link
   const [isOpen, setIsOpen] = useState(false);
@@ -19,9 +19,9 @@ const Navbar = () => {
         setIsScrolled(false);
       }
     };
-  
+
     window.addEventListener('scroll', handleScroll);
-  
+
     // Clean up the event listener on component unmount
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -30,19 +30,21 @@ const Navbar = () => {
 
   // Update active link on route change
   useEffect(() => {
-    const handleRouteChange = (url) => {
-      setActiveLink(url);
-    };
+    if (router) {
+      const handleRouteChange = (url) => {
+        setActiveLink(url);
+      };
 
-    // Listen to route changes
-    router.events?.on('routeChangeComplete', handleRouteChange);
+      // Listen to route changes
+      router.events?.on('routeChangeComplete', handleRouteChange);
 
-    // Set the initial active link
-    setActiveLink(window.location.pathname);
+      // Set the initial active link
+      setActiveLink(window.location.pathname);
 
-    return () => {
-      router.events?.off('routeChangeComplete', handleRouteChange);
-    };
+      return () => {
+        router.events?.off('routeChangeComplete', handleRouteChange);
+      };
+    }
   }, [router]);
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -55,15 +57,16 @@ const Navbar = () => {
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         isScrolled ? 'bg-blue-900 shadow-lg' : 'bg-transparent pt-0'
       }`}
-      
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-around p-4">
+      <div className="max-w-7xl mx-auto flex items-center justify-between p-4">
         {/* Logo */}
-        <a href='/'>
-        <div className="flex items-center space-x-2">
-          <img src="/logo.png" alt="Logo" className="h-10 w-auto" />
-          <span className="text-white text-xl font-semibold">Impact for Success Foundation</span>
-        </div>
+        <a href="/">
+          <div className="flex items-center space-x-2">
+            <img src="/logo.png" alt="Logo" className="h-10 w-auto" />
+            <span className="text-white text-xl font-semibold">
+              Impact for Success Foundation
+            </span>
+          </div>
         </a>
 
         {/* Desktop Navigation */}
@@ -84,6 +87,12 @@ const Navbar = () => {
               className={`text-white relative group`}
             >
               <span className="relative z-10">{label}</span>
+               {/* Animated bar */}
+      <div
+        className={`absolute bottom-0 top-6 left-0 w-0 h-1 bg-white transition-width duration-300 ${
+          activeLink === href ?'group-hover:none':'group-hover:w-full'
+        }`}
+      />
               {/* Bar under active link */}
               <div
                 className={`absolute bottom-0 top-6 left-0 w-full h-1 bg-white transform transition-transform duration-300 ${
@@ -105,7 +114,12 @@ const Navbar = () => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             ) : (
               <svg
@@ -115,7 +129,12 @@ const Navbar = () => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               </svg>
             )}
           </button>

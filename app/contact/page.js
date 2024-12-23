@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ScrollToTopButton from '../scrollbtn';
+import DonationNotification from '../components/donate';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -105,6 +106,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      <DonationNotification />
       <Footer />
       <ScrollToTopButton />
     </>

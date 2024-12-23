@@ -1,32 +1,34 @@
 import React, { useState, useEffect } from 'react';
+import Flag from 'react-world-flags';
+import { motion } from 'framer-motion';
 
 // List of donation messages
 const notifications = [
   {
     name: "jennifer o.",
     amount: "$20",
-    emoji: "🎉", // Confetti emoji
+    emoji: "", // Confetti emoji
     message: "to children in Africa who need it most",
     location: "Chicago, United States",
-    countryFlag: "🇺🇸",  // Country flag (USA)
+    countryCode: "US",  // Country code (US)
     donateLink: "#",  // Link to your donation page
   },
   {
     name: "yanjufoundation",
     amount: "$50",
-    emoji: "🎁", // Gift emoji
+    emoji: "", // Gift emoji
     message: "to help build schools in rural Africa",
     location: "Camden, United Kingdom",
-    countryFlag: "🇬🇧",  // Country flag (UK)
+    countryCode: "GB",  // Country code (GB)
     donateLink: "#",  // Link to your donation page
   },
   {
     name: "joseph s.",
     amount: "$30",
-    emoji: "🌍", // Earth emoji
+    emoji: "", // Earth emoji
     message: "for clean water in Kenya",
     location: "New York, United States",
-    countryFlag: "🇺🇸",  // Country flag (USA)
+    countryCode: "US",  // Country code (US)
     donateLink: "#",  // Link to your donation page
   },
   // Add more donation messages here
@@ -44,8 +46,8 @@ const DonationNotification = () => {
         // After hiding, update the notification and show it again
         setNotificationIndex((prevIndex) => (prevIndex + 1) % notifications.length);
         setVisible(true); // Show the new notification
-      }, 50000); // Small delay before showing the next notification
-    }, 5000); // Change notification every 5 seconds
+      }, 1000); // Small delay before showing the next notification (adjusted to 1 second)
+    }, 5000); // Change notification every 5 seconds (adjusted to speed up transition)
 
     // Clear the interval when the component unmounts
     return () => clearInterval(interval);
@@ -59,8 +61,11 @@ const DonationNotification = () => {
   const notification = notifications[notificationIndex];
 
   return (
-    <div
-      className="fixed top-[489px] left-[200px] transform -translate-x-1/2 w-96 bg-green-500 text-white p-4 shadow-lg rounded-lg flex flex-col space-y-3 z-50"
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: 'easeInOut' }}
+      className="fixed top-[489px] left-[20px] transform -translate-x-1/2 w-96 bg-[#151E38] text-[#C6AF88] p-4 shadow-lg rounded-lg flex flex-col space-y-3 z-50"
     >
       <div className="flex justify-between items-center">
         <div className="flex flex-col w-full space-y-2">
@@ -69,7 +74,8 @@ const DonationNotification = () => {
           </span>
           <span className="text-sm">{notification.message}</span>
           <div className="flex items-center space-x-2">
-            <span className="text-sm">{notification.countryFlag}</span>
+            {/* Fixed comment syntax and updated the flag height */}
+            <Flag code={notification.countryCode} style={{ height: '20px' }} />
             <span className="text-sm">{notification.location}</span>
           </div>
         </div>
@@ -88,7 +94,7 @@ const DonationNotification = () => {
       >
         &times;
       </button>
-    </div>
+    </motion.div>
   );
 };
 

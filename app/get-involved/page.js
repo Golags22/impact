@@ -6,6 +6,7 @@ import Navbar from '../components/Navbar';
 import Volunteer from '../components/volunteer';
 import Loading from '../components/Loader';
 import ScrollToTopButton from '../scrollbtn';
+import DonationNotification from '../components/donate';
 
 const GetInvolved = () => {
   const [email, setEmail] = useState('');
@@ -270,6 +271,7 @@ const GetInvolved = () => {
           <span id="volunteer">
             <Volunteer />
           </span>
+          <DonationNotification />
           <Footer />
           <ScrollToTopButton />
         </>

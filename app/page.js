@@ -12,6 +12,7 @@ import ImpactMetrics from "./components/metrcsi";
 import Testimonials from "./components/testimonials";
 import Loading from "./components/Loader";
 import Bloginto from "./components/bloginto";
+import DonationNotification from "./components/donate";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -38,6 +39,7 @@ export default function Home() {
           <Testimonials />
           <Bloginto />
           <PatternSlider />
+          <DonationNotification />
           <Footer />
           <ScrollToTopButton />
         </div>

@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ScrollToTopButton from "../scrollbtn";
+import Marquee from "react-fast-marquee";
 import {
   FaStar,
   FaHandsHelping,
@@ -18,20 +19,57 @@ import {
 } from "react-icons/fa";
 import Loading from "../components/Loader";
 import Cardinals from "../components/cardinals";
+import DonationNotification from "../components/donate";
 
 
 const About = () => {
   const images = [
-    "/images/teams/t1.jpg",
-    "/images/teams/t2.png",
-    "/images/teams/t3.jpg",
-    "/images/teams/t6.jpg",
-    "/images/teams/t7.jpg",
-    "/images/teams/t9.jpg",
-    "/images/teams/t9.jpg",
-    "/images/teams/t9.jpg",
-    "/images/teams/t9.jpg",
-    "/images/teams/t9.jpg",
+    {
+      image: "/images/teams/t1.jpg",
+      name: "John Doe",
+      position: "Project Manager",
+    },
+    {
+      image: "/images/teams/t2.jpg",
+      name: "John Doe",
+      position: "Project Manager",
+    },
+    {
+      image: "/images/teams/t3.jpg",
+      name: "John Doe",
+      position: "Project Manager",
+    },
+    {
+      image: "/images/teams/t4.jpg",
+      name: "John Doe",
+      position: "Project Manager",
+    },
+    {
+      image: "/images/teams/t5.jpg",
+      name: "John Doe",
+      position: "Project Manager",
+    },
+    {
+      image: "/images/teams/t6.jpg",
+      name: "John Doe",
+      position: "Project Manager",
+    },
+    {
+      image: "/images/teams/t7.jpg",
+      name: "John Doe",
+      position: "Project Manager",
+    },
+    {
+      image: "/images/teams/t8.jpg",
+      name: "John Doe",
+      position: "Project Manager",
+    },
+    {
+      image: "/images/teams/t9.jpg",
+      name: "John Doe",
+      position: "Project Manager",
+    },
+
   ];
 
   const [isLoading, setIsLoading] = useState(true);
@@ -40,7 +78,7 @@ const About = () => {
     // Simulate loading (e.g., fetching data)
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 3000); // 4 seconds delay
+    }, 3000); // 3 seconds delay
 
     return () => clearTimeout(timer);
   }, []);
@@ -62,6 +100,28 @@ const About = () => {
               </p>
             </div>
           </section>
+
+{/*OUR IMPACT*/}
+<section id="ourimpact" className="py-16 bg-gray-100">
+            <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center">
+              <h2 className="text-3xl xs:text-2xl font-bold mb-8">Our Impact</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="bg-white shadow-lg p-6 rounded-lg">
+                  <h3 className="text-4xl xs:text-2xl font-bold text-blue-500">500+</h3>
+                  <p className="text-lg xs:text-sm text-gray-600">Communities Impacted</p>
+                </div>
+                <div className="bg-white shadow-lg p-6 rounded-lg">
+                  <h3 className="text-4xl xs:text-2xl font-bold text-blue-500">1000+</h3>
+                  <p className="text-lg xs:text-sm text-gray-600">Children Supported</p>
+                </div>
+                <div className="bg-white shadow-lg p-6 rounded-lg">
+                  <h3 className="text-4xl xs:text-2xl font-bold text-blue-500">200+</h3>
+                  <p className="text-lg xs:text-sm text-gray-600">Volunteers Engaged</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
 
           {/* Mission Section */}
           <section id="mission" className="py-16 bg-[#f7fafc]">
@@ -101,6 +161,7 @@ const About = () => {
               </div>
             </div>
           </section>
+
 
 
        {/* Core Values Section */}
@@ -143,7 +204,7 @@ const About = () => {
           </section>
 
           {/* Other Sections */}
-          <section id="cardinals-section" className="bg-gray-50 p-8 border border-gray-300">
+          <section id="cardinals-section" className="bg-gray-50  border border-gray-300">
             <Cardinals />
           </section>
           {/* Team Section */}
@@ -194,27 +255,33 @@ const About = () => {
           </section>
 
           {/* Group head Section */}
-          <div className="relative w-full h-[400px] mb-10 overflow-hidden bg-gray-100">
-            <div className="text-center pt-5">
-              <h2 className="text-2xl font-bold text-gray-800 mb-4">Group Heads</h2>
-            </div>
-            <div className="flex w-[200%] animate-slide">
-              {images.map((image, index) => (
-                <div key={index} className="w-[300px] mx-2 flex-shrink-0">
-                  <img src={image} alt={`Partner ${index + 1}`} className="w-full h-full object-cover rounded-md shadow-md" />
-                </div>
-              ))}
-              {/* Duplicate for seamless sliding */}
-              {images.map((image, index) => (
-                <div key={`dup-${index}`} className="w-[300px] mx-2 flex-shrink-0">
-                  <img src={image} alt={`Partner ${index + 1}`} className="w-full h-full object-cover rounded-md shadow-md" />
-                </div>
-              ))}
-            </div>
-          </div>
+          <div className="relative w-full h-[400px] mb-9 overflow-hidden bg-gray-100">
+      {/* Header */}
+      <div className="text-center pt-3">
+        <h2 className="text-2xl font-bold text-gray-800 mb-[4px]">Group Heads</h2>
+      </div>
 
+      {/* Marquee */}
+      <Marquee gradient={true} speed={50} pauseOnHover gradientWidth={20} gradientColor="gray">
+        {images.map((item, index) => (
+          <div key={index} className="w-[300px] mx-2 flex-shrink-0 cursor-pointer">
+            <img
+            src={item.image}
+              alt={`${item.name} - ${item.position}`}
+              className="w-full h-full object-cover rounded-md shadow-md"
+            />
+            {/* Name and Position */}
+      <div className="mt-2">
+        <h3 className="text-lg font-semibold text-gray-800">{item.name}</h3>
+        <p className="text-sm text-gray-600">{item.position}</p>
+      </div>
+          </div>
+        ))}
+      </Marquee>
+    </div>
           {/* Scroll to top button */}
           <ScrollToTopButton />
+          <DonationNotification />
           <Footer />
         </>
       )}

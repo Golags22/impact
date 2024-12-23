@@ -7,6 +7,9 @@ import Footer from "../components/Footer";
 import Loading from "../components/Loader";
 import Cardinals from "../components/cardinals";
 import ScrollToTopButton from "../scrollbtn";
+import PatternSlider from "../components/pattiners";
+import DonationNotification from "../components/donate";
+
 
 const Projects = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -108,23 +111,12 @@ const Projects = () => {
             </div>
           </section>
 
-          <section className="py-12 bg-gray-200">
-            <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center">
-              <h2 className="text-3xl xs:text-2xl font-bold mb-8">Our Partners</h2>
-              <div className="flex overflow-x-auto space-x-8 items-center">
-                {[...Array(4)].map((_, index) => (
-                  <img
-                    key={index}
-                    src={`/images/partners/p${index + 1}.png`}
-                    alt={`Partner ${index + 1}`}
-                    loading="lazy"
-                    className="w-32 h-auto xs:w-20"
-                  />
-                ))}
-              </div>
-            </div>
+          <section className="bg-gray-200">
+           
+        
+             <PatternSlider />
           </section>
-
+          <DonationNotification />
           <Footer />
           <ScrollToTopButton />
         </>
