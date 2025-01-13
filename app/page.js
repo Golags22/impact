@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useEffect } from "react";
-import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 import HeroSection from "./components/hero";
 import AboutHighlight from "./components/hightlight";
 import Volunteer from "./components/volunteer";
@@ -13,6 +13,7 @@ import Testimonials from "./components/testimonials";
 import Loading from "./components/Loader";
 import Bloginto from "./components/bloginto";
 import DonationNotification from "./components/donate";
+
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -30,8 +31,9 @@ export default function Home() {
         <Loading />
       ) : (
         <div>
-          <Navbar />
+       
           <HeroSection />
+          <Navbar/>
           <AboutHighlight />
           <Programs />
           <ImpactMetrics />
@@ -39,7 +41,10 @@ export default function Home() {
           <Testimonials />
           <Bloginto />
           <PatternSlider />
-          {/* <DonationNotification /> */}
+          <div className="hidden lg:hidden">
+          <DonationNotification />
+          </div>
+         
           <Footer />
           <ScrollToTopButton />
         </div>

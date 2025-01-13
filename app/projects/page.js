@@ -8,7 +8,7 @@ import Loading from "../components/Loader";
 import Cardinals from "../components/cardinals";
 import ScrollToTopButton from "../scrollbtn";
 import PatternSlider from "../components/pattiners";
-import DonationNotification from "../components/donate";
+
 
 
 const Projects = () => {
@@ -116,7 +116,6 @@ const Projects = () => {
         
              <PatternSlider />
           </section>
-          <DonationNotification />
           <Footer />
           <ScrollToTopButton />
         </>

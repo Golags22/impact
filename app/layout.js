@@ -1,6 +1,8 @@
+import { Roboto, Playfair_Display } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 
+// Load local fonts as you did before
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -10,6 +12,19 @@ const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
   weight: "100 900",
+});
+
+// Load Google Fonts
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: "--font-roboto",
+});
+
+const playfairDisplay = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: "--font-playfair-display",
 });
 
 export const metadata = {
@@ -24,7 +39,7 @@ export default function RootLayout({ children }) {
       <link rel="icon" href="/favicon/favicon-32x32.png" />
       <link rel="icon" href="/favicon/apple-touch-icon.png" />
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${roboto.variable} ${playfairDisplay.variable} antialiased`}
       >
         {children}
       </body>

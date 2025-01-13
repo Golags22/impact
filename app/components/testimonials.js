@@ -53,11 +53,11 @@ const Testimonials = () => {
       {/* Carousel Wrapper */}
       <div className="relative h-64 overflow-hidden rounded-lg md:h-96">
         {testimonials.map((testimonial, index) => (
-          <motion.div
+          <div
             key={index}
-            initial={{ opacity: 0, x: -100 }}
-            animate={index === currentIndex ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
-            transition={{ duration: 0.6, ease: 'easeInOut', delay: 0.2 }}
+            // initial={{ opacity: 0, x: -100 }}
+            // animate={index === currentIndex ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
+            // transition={{ duration: 0.6, ease: 'easeInOut', delay: 0.2 }}
             className={`absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-700 ${
               index === currentIndex ? "opacity-100" : "opacity-0"
             }`}
@@ -73,7 +73,7 @@ const Testimonials = () => {
             <span className="mt-2 text-sm font-bold text-gray-900">
               - {testimonial.name}
             </span>
-          </motion.div>
+          </div>
         ))}
       </div>
 
@@ -87,6 +87,7 @@ const Testimonials = () => {
       >
         <FaArrowLeft className="text-gray-100" size={24} />
       </motion.button>
+      
       <motion.button
         onClick={nextSlide}
         initial={{ opacity: 0, x: 50 }}

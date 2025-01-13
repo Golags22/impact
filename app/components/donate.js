@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Flag from 'react-world-flags';
 import { motion } from 'framer-motion';
+import Flag from 'react-world-flags';
 
 // List of donation messages
 const notifications = [
@@ -65,7 +65,7 @@ const DonationNotification = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: 'easeInOut' }}
-      className="fixed top-[489px] left-[20px] transform -translate-x-1/2 w-96 bg-[#151E38] text-[#C6AF88] p-4 shadow-lg rounded-lg flex flex-col space-y-3 z-50"
+      className="fixed top-[489px] left-[20px] transform -translate-x-1/2 w-96 bg-[#151E38] text-[#C6AF88] p-4 shadow-lg rounded-lg flex flex-col space-y-3 z-50 "
     >
       <div className="flex justify-between items-center">
         <div className="flex flex-col w-full space-y-2">

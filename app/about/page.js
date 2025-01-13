@@ -255,29 +255,31 @@ const About = () => {
           </section>
 
           {/* Group head Section */}
-          <div className="relative w-full h-[400px] mb-9 overflow-hidden bg-gray-100">
+          <div className="relative w-full h-[500px] overflow-hidden bg-gray-100">
       {/* Header */}
       <div className="text-center pt-3">
         <h2 className="text-2xl font-bold text-gray-800 mb-[4px]">Group Heads</h2>
       </div>
 
       {/* Marquee */}
-      <Marquee gradient={true} speed={50} pauseOnHover gradientWidth={20} gradientColor="gray">
-        {images.map((item, index) => (
-          <div key={index} className="w-[300px] mx-2 flex-shrink-0 cursor-pointer">
-            <img
-            src={item.image}
-              alt={`${item.name} - ${item.position}`}
-              className="w-full h-full object-cover rounded-md shadow-md"
-            />
-            {/* Name and Position */}
-      <div className="mt-2">
-        <h3 className="text-lg font-semibold text-gray-800">{item.name}</h3>
-        <p className="text-sm text-gray-600">{item.position}</p>
+      
+  <div className="overflow-x-auto flex">
+    {images.map((item, index) => (
+      <div key={index} className="w-[300px] mx-2 flex-shrink-0 cursor-pointer">
+        <img
+          src={item.image}
+          alt={`${item.name} - ${item.position}`}
+          className="w-full h-[300px] object-cover rounded-md shadow-md"
+        />
+        {/* Name and Position */}
+        <div className="mt-2">
+          <h3 className="text-lg font-semibold text-gray-800">{item.name}</h3>
+          <p className="text-sm text-gray-600">{item.position}</p>
+        </div>
       </div>
-          </div>
-        ))}
-      </Marquee>
+    ))}
+  </div>
+
     </div>
           {/* Scroll to top button */}
           <ScrollToTopButton />
