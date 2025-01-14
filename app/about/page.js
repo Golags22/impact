@@ -283,7 +283,7 @@ const About = () => {
     </div>
           {/* Scroll to top button */}
           <ScrollToTopButton />
-          <DonationNotification />
+          {/* <DonationNotification /> */}
           <Footer />
         </>
       )}

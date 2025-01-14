@@ -49,7 +49,7 @@ const AboutHighlight = () => {
             className="max-w-lg text-left"
           >
  <div className="flex flex-col items-center text-right">
-  <h3 className="text-2xl font-serif font-bold text-[#FAFAFA]  mb-2">Empowering Communities</h3>
+  <h3 className="text-2xl font-serif font-bold text-[#FAFAFA]  mb-2">Impacting Lives</h3>
   {/* <motion.img
     initial={{ opacity: 0, scale: 0.5 }}
     animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5 }}

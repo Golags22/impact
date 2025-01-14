@@ -40,11 +40,7 @@ export default function Home() {
           <Volunteer />
           <Testimonials />
           <Bloginto />
-          <PatternSlider />
-          <div className="hidden lg:hidden">
-          <DonationNotification />
-          </div>
-         
+          <PatternSlider />     
           <Footer />
           <ScrollToTopButton />
         </div>

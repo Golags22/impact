@@ -21,14 +21,14 @@ const Volunteer = () => {
     >
       <div className="absolute inset-0 bg-black opacity-50"></div>
       <div className="relative z-10 flex justify-between items-center h-full px-8 py-16 text-white">
-        <motion.div
+        <div
           className="w-1/2 hidden md:block"
-          initial={{ opacity: 0, scale: 0.8, x: -100 }}
-          animate={isInView ? { opacity: 1, scale: 1, x: 0 } : { opacity: 0, scale: 0.8, x: -100 }}
-          transition={{ duration: 0.6, ease: 'easeInOut', delay: 0.2 }}
+          // initial={{ opacity: 0, scale: 0.8, x: -100 }}
+          // animate={isInView ? { opacity: 1, scale: 1, x: 0 } : { opacity: 0, scale: 0.8, x: -100 }}
+          // transition={{ duration: 0.6, ease: 'easeInOut', delay: 0.2 }}
         >
           <Image src="/images/you.png" alt="Volunteer" width={600} height={400} className="rounded-lg" />
-        </motion.div>
+        </div>
         <motion.div
           className="w-full md:w-1/2"
           initial={{ opacity: 0, y: 50 }}

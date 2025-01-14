@@ -39,7 +39,7 @@ const Testimonials = () => {
   };
 
   return (
-    <motion.div
+    <div
       ref={ref}
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
@@ -55,9 +55,6 @@ const Testimonials = () => {
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
-            // initial={{ opacity: 0, x: -100 }}
-            // animate={index === currentIndex ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
-            // transition={{ duration: 0.6, ease: 'easeInOut', delay: 0.2 }}
             className={`absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-700 ${
               index === currentIndex ? "opacity-100" : "opacity-0"
             }`}
@@ -78,25 +75,19 @@ const Testimonials = () => {
       </div>
 
       {/* Slider Controls */}
-      <motion.button
+      <button
         onClick={prevSlide}
-        initial={{ opacity: 0, x: -50 }}
-        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
-        transition={{ duration: 0.6, ease: 'easeInOut', delay: 0.4 }}
         className="absolute top-1/2 left-0 z-30 flex items-center justify-center h-12 w-12 -translate-y-1/2 bg-gray-800 rounded-full cursor-pointer focus:outline-none"
       >
         <FaArrowLeft className="text-gray-100" size={24} />
-      </motion.button>
+      </button>
       
-      <motion.button
+      <button
         onClick={nextSlide}
-        initial={{ opacity: 0, x: 50 }}
-        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-        transition={{ duration: 0.6, ease: 'easeInOut', delay: 0.4 }}
         className="absolute top-1/2 right-0 z-30 flex items-center justify-center h-12 w-12 -translate-y-1/2 bg-gray-800 rounded-full cursor-pointer focus:outline-none"
       >
         <FaArrowRight className="text-gray-100" size={24} />
-      </motion.button>
+      </button>
 
       {/* Indicators */}
       <motion.div
@@ -119,7 +110,7 @@ const Testimonials = () => {
         />
       ))}
     </motion.div>
-  </motion.div>
+  </div>
 );
 }
 export default Testimonials;
