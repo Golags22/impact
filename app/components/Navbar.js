@@ -51,7 +51,7 @@ const Navbar = () => {
   }, [router]);
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-blue-900 shadow-lg' : 'bg-transparent pt-0'}`}>
+    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-[#003B65] shadow-lg' : 'bg-transparent pt-0'}`}>
       <div className="max-w-7xl mx-auto flex items-center justify-between p-4">
         <a href="/" aria-label="Home">
           <div className="flex items-center space-x-2">

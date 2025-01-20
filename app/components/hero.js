@@ -35,7 +35,7 @@ const HeroSection = () => {
           </a>
           <a
             href="/donate"
-            className="px-6 py-3 md:px-8 md:py-4 bg-blue-600 text-white font-semibold text-lg rounded-lg hover:bg-blue-700 transition"
+            className="px-6 py-3 md:px-8 md:py-4  text-white font-semibold text-lg rounded-lg hover:bg-blue-700 transition"
           >
             Donate Now
           </a>
