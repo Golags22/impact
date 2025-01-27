@@ -1,32 +1,17 @@
 'use client';
 
-import React, { useState, useEffect } from "react";
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import 'react-photo-view/dist/react-photo-view.css';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
-import DonationNotification from '../components/donate';
-import Loading from "../components/Loader";
+
+
 
 
 const Gallery = () => {
   const images = Array.from({ length: 35 }, (_, index) => `/images/gallery/img-${index + 1}.jpg`);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    // Simulate loading (e.g., fetching data)
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 3000); // 4 seconds delay
-
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
-    <>
-     {isLoading ? (
-        <Loading />
-      ) : (
+   
         <>
       <Navbar />
       <div className="bg-blue-500 min-h-screen flex flex-col">
@@ -53,13 +38,8 @@ const Gallery = () => {
             </div>
           </PhotoProvider>
         </main>
-        <DonationNotification />
         <Footer />
       </div>
       </>
    )}
-    </>
-  );
-};
-
 export default Gallery;

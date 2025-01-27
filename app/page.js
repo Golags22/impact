@@ -10,29 +10,17 @@ import PatternSlider from "./components/pattiners";
 import Programs from "./components/focus";
 import ImpactMetrics from "./components/metrcsi";
 import Testimonials from "./components/testimonials";
-import Loading from "./components/Loader";
 import Bloginto from "./components/bloginto";
+import SessionLoader from "./components/sessionstorage";
 import DonationNotification from "./components/donate";
 
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
-  useEffect(() => {
-    // Simulate loading (e.g., fetching data)
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 3000); // 3 seconds delay
-
-    return () => clearTimeout(timer);
-  }, []);
+  
   return (
     <>
-      {isLoading ? (
-        <Loading />
-      ) : (
-        <div>
-       
-          <HeroSection />
+       <SessionLoader>
+       <HeroSection />
           <Navbar/>
           <AboutHighlight />
           <Programs />
@@ -43,8 +31,8 @@ export default function Home() {
           <PatternSlider />     
           <Footer />
           <ScrollToTopButton />
-        </div>
-      )}
+       </SessionLoader>
+          
     </>
   );
 }

@@ -9,22 +9,8 @@ import Loading from "../components/Loader";
 
 
 export default function Blog() {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    // Simulate loading (e.g., fetching data)
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 3000); // 4 seconds delay
-
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
-    <>
-    {isLoading ? (
-        <Loading />
-      ) : (
+   
         <>
     <div className="bg-gray-100 ">
       <Navbar />
@@ -228,6 +214,3 @@ export default function Blog() {
     <Footer /> 
     </>
 )}
-    </>
-  );
-}

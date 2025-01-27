@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ScrollToTopButton from "../scrollbtn";
@@ -11,85 +11,20 @@ import {
   FaHandsHelping,
   FaShieldAlt,
   FaUsers,
-  FaHeart,
-  FaLightbulb,
-  FaMedal,
   FaHandshake,
-  FaLock,
-  FaInfinity,
   FaChild,
   FaArrowAltCircleDown,
   FaRegEye,
 } from "react-icons/fa";
-import Loading from "../components/Loader";
 import Cardinals from "../components/cardinals";
+import Link from "next/link";
 
+import { images } from "../components/data/data";
 
 const About = () => {
-  const images = [
-    {
-      image: "/images/teams/t1.jpg",
-      name: "John Doe",
-      position: "Project Manager",
-    },
-    {
-      image: "/images/teams/t2.jpg",
-      name: "John Doe",
-      position: "Project Manager",
-    },
-    {
-      image: "/images/teams/t3.jpg",
-      name: "John Doe",
-      position: "Project Manager",
-    },
-    {
-      image: "/images/teams/t4.jpg",
-      name: "John Doe",
-      position: "Project Manager",
-    },
-    {
-      image: "/images/teams/t5.jpg",
-      name: "John Doe",
-      position: "Project Manager",
-    },
-    {
-      image: "/images/teams/t6.jpg",
-      name: "John Doe",
-      position: "Project Manager",
-    },
-    {
-      image: "/images/teams/t7.jpg",
-      name: "John Doe",
-      position: "Project Manager",
-    },
-    {
-      image: "/images/teams/t8.jpg",
-      name: "John Doe",
-      position: "Project Manager",
-    },
-    {
-      image: "/images/teams/t9.jpg",
-      name: "John Doe",
-      position: "Project Manager",
-    },
-  ];
-
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    // Simulate loading (e.g., fetching data)
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 3000); // 3 seconds delay
-
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
-    <>
-      {isLoading ? (
-        <Loading />
-      ) : (
+  
         <>
             <Navbar />
           {/* Hero Section */}
@@ -151,7 +86,7 @@ const About = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div className="bg-white shadow-lg p-6 rounded-lg">
                   <h3 className="text-4xl xs:text-2xl font-bold text-blue-500">
-                    500+
+                    4+
                   </h3>
                   <p className="text-lg xs:text-sm text-gray-600">
                     <FaUsers /> Communities Impacted
@@ -173,6 +108,14 @@ const About = () => {
                     <FaHandsHelping /> Volunteers Engaged
                   </p>
                 </div>
+                <div className="bg-white shadow-lg p-6 rounded-lg">
+                  <h3 className="text-4xl xs:text-2xl font-bold text-blue-500">
+                    2000+
+                  </h3>
+                  <p className="text-lg xs:text-sm text-gray-600">
+                    <FaHandsHelping /> Feed & Clothed
+                  </p>
+                </div>
               </div>
             </div>
           </section>
@@ -191,11 +134,11 @@ const About = () => {
                     <p className="text-gray-600 p-10">
                       To be a role model for African growth by creating superior value for all our stakeholders...
                     </p>
-                    <a            href="#"
+                    <Link href="/about/history"
             className="px-6 py-3 md:px-8 md:py-4  text-white font-semibold text-lg rounded-lg bg-green-700"
           >
             Learn More
-          </a>
+          </Link>
                   </div>
 
                   {/* Archivement */}
@@ -207,7 +150,7 @@ const About = () => {
                     <p className="text-gray-600 p-10">
                       To be the undisputed leading and dominant financial services institution in Africa.
                     </p>
-                    <a            href="#"
+                    <a            href="/about/achievements"
             className="px-6 py-3 md:px-8 md:py-4  text-white font-semibold text-lg rounded-lg bg-green-700"
           >
             Learn More
@@ -395,8 +338,8 @@ const About = () => {
           <Footer />
         </>
       )}
-    </>
-  );
-};
+    
+  
+
 
 export default About;

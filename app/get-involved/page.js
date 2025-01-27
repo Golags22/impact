@@ -4,13 +4,11 @@ import React, { useState, useEffect } from 'react';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import Volunteer from '../components/volunteer';
-import Loading from '../components/Loader';
 import ScrollToTopButton from '../scrollbtn';
-import DonationNotification from '../components/donate';
+
 
 const GetInvolved = () => {
   const [email, setEmail] = useState('');
-  const [isLoading, setIsLoading] = useState(true);
 
   const handleEmailChange = (e) => setEmail(e.target.value);
 
@@ -20,19 +18,9 @@ const GetInvolved = () => {
     setEmail('');
   };
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 3000); // Simulate loading
-
-    return () => clearTimeout(timer);
-  }, []);
-
+  
   return (
-    <>
-      {isLoading ? (
-        <Loading />
-      ) : (
+    
         <>
           <Navbar />
 
@@ -271,13 +259,9 @@ const GetInvolved = () => {
           <span id="volunteer">
             <Volunteer />
           </span>
-          <DonationNotification />
           <Footer />
           <ScrollToTopButton />
         </>
       )}
-    </>
-  );
-};
-
+ 
 export default GetInvolved;

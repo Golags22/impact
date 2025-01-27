@@ -23,10 +23,7 @@ const Volunteer = () => {
       <div className="relative z-10 flex justify-between items-center h-full px-8 py-16 text-white">
         <div
           className="w-1/2 hidden md:block"
-          // initial={{ opacity: 0, scale: 0.8, x: -100 }}
-          // animate={isInView ? { opacity: 1, scale: 1, x: 0 } : { opacity: 0, scale: 0.8, x: -100 }}
-          // transition={{ duration: 0.6, ease: 'easeInOut', delay: 0.2 }}
-        >
+                  >
           <Image src="/images/you.png" alt="Volunteer" width={600} height={400} className="rounded-lg" />
         </div>
         <motion.div

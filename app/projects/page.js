@@ -12,21 +12,11 @@ import PatternSlider from "../components/pattiners";
 
 
 const Projects = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 3000);
-
-    return () => clearTimeout(timer);
-  }, []);
+ 
+ 
 
   return (
-    <>
-      {isLoading ? (
-        <Loading />
-      ) : (
+
         <>
           <section
             className="relative bg-cover bg-center h-[610px] sm:h-[500px] xs:h-[400px]"
@@ -120,8 +110,6 @@ const Projects = () => {
           <ScrollToTopButton />
         </>
       )}
-    </>
-  );
-};
+
 
 export default Projects;

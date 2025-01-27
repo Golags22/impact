@@ -6,7 +6,7 @@ const AboutHighlight = () => {
   const isInView = useInView(ref, { threshold: 0.2 });
 
   return (
-    <section className="relative bg-[#151E38] py-16 flex" >
+    <section className="relative bg-[#007BA7] py-16 flex" >
       <motion.div
         initial={{ opacity: 0, y: 100 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}

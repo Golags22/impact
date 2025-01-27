@@ -90,11 +90,7 @@ const Testimonials = () => {
       </button>
 
       {/* Indicators */}
-      <motion.div
-       
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ duration: 0.6, ease: 'easeInOut', delay: 0.6 }}
+      <div
       className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2"
     >
       {testimonials.map((_, index) => (
@@ -109,7 +105,7 @@ const Testimonials = () => {
           }`}
         />
       ))}
-    </motion.div>
+    </div>
   </div>
 );
 }

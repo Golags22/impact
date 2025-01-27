@@ -2,6 +2,7 @@ import React from "react";
 import WaveComponent from "./wave";
 
 function Footer() {
+  const currentYear = new Date().getFullYear();
   return (
     <>
     <WaveComponent />
@@ -116,7 +117,8 @@ function Footer() {
         {/* Footer Bottom */}
         <div className="text-center mt-8 border-t border-gray-700 pt-4">
           <p className="text-sm">
-            &copy; 2024 Impact for Success Foundation. All rights reserved.
+            {/* The year is updated Automatically*/}
+            &copy; {currentYear} Impact for Success Foundation. All rights reserved.
           </p>
         </div>
       </div>
