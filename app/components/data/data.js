@@ -24,6 +24,11 @@ export const images = [
     position: "Ushering Department",
   },
   {
+    image: "/images/teams/anthony.jpg",
+    name: "Anthony Joshua Eze",
+    position: " Department",
+  },
+  {
     image: "/images/teams/Sponsorship.jpg",
     name: "Okonkwo Ifunanya Doris",
     position: "Sponsorship Department",
@@ -31,28 +36,13 @@ export const images = [
   {
     image: "/images/teams/t5.jpg",
     name: "John Doe",
-    position: "Project Manager",
+    position: "",
   },
   {
     image: "/images/teams/t6.jpg",
     name: "John Doe",
-    position: "Project Manager",
-  },
-  {
-    image: "/images/teams/t7.jpg",
-    name: "John Doe",
-    position: "Project Manager",
-  },
-  {
-    image: "/images/teams/t8.jpg",
-    name: "John Doe",
-    position: "Project Manager",
-  },
-  {
-    image: "/images/teams/t9.jpg",
-    name: "John Doe",
-    position: "Project Manager",
-  },
+    position: "",
+  }
 ];
 
 
