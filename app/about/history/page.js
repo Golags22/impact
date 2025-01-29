@@ -37,6 +37,7 @@ const Timeline = () => {
                     <div className="text-blue-800 font-semibold text-2xl">{event.year}</div>
                   </div>
                   <h4 className="text-xl font-bold text-gray-800 mt-4">{event.title}</h4>
+                  <div className="text-blue-800 font-semibold text-2xl">{event.img}</div>
                   <p className="text-gray-700 mt-3 text-lg">{event.description}</p>
                 </div>
               </div>

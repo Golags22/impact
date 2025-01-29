@@ -5,8 +5,8 @@
 export const images = [
   {
     image: "/images/teams/t1.jpg",
-    name: "ESEVERERE CARRINGTON VARO",
-    position: "Project Manager",
+    name: "Christabel Jesusemen",
+    position: "HOD",
   },
   {
     image: "/images/teams/projectmanager.jpg",
@@ -66,6 +66,7 @@ export const events = [
   {
     year: "2018",
     title: "Early Programs & Partnerships",
+    img:"",
     description: "Launched educational programs and formed key partnerships to increase outreach and community support.",
   },
   {

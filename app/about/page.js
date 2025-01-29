@@ -59,7 +59,7 @@ const About = () => {
                     </div>
                     <h3 className="text-2xl font-semibold text-orange-500 mb-4">Our Mission</h3>
                     <p className="text-gray-600">
-                      To be a role model for African businesses by creating superior value for all our stakeholders...
+                    At the IFSF, our mission is to empower individuals to unlock their full potential and create lasting change. Through innovative education, resources, and unwavering support, we are committed to driving success that transforms lives and communities.
                     </p>
                   </div>
 
@@ -70,7 +70,7 @@ const About = () => {
                     </div>
                     <h3 className="text-2xl font-semibold text-orange-500 mb-4">Vision</h3>
                     <p className="text-gray-600">
-                      To be the undisputed leading and dominant financial services institution in Africa.
+                    We envision a world where every person has the opportunity, confidence, and tools to not just dream, but to thrive. A world where success is within reach for all, and every action creates a ripple of positive impact that drives global change.
                     </p>
                   </div>
                 </div>
@@ -132,7 +132,7 @@ const About = () => {
                     </div>
                     <h3 className="text-2xl font-semibold text-orange-500 mb-4">History</h3>
                     <p className="text-gray-600 p-10">
-                      To be a role model for African growth by creating superior value for all our stakeholders...
+                    Impacts for Success Foundation was born out of a deep passion for creating opportunities where they are most needed. Founded with the vision of empowering individuals and communities to achieve their fullest potential, our journey began with a simple but powerful idea: to help people overcome barriers and reach their dreams. 
                     </p>
                     <Link href="/about/history"
             className="px-6 py-3 md:px-8 md:py-4  text-white font-semibold text-lg rounded-lg bg-green-700"
@@ -148,7 +148,7 @@ const About = () => {
                     </div>
                     <h3 className="text-2xl font-semibold text-orange-500 mb-4">Achievements</h3>
                     <p className="text-gray-600 p-10">
-                      To be the undisputed leading and dominant financial services institution in Africa.
+                    Throughout our journey, the Impacts for Success Foundation has made significant strides in empowering individuals and transforming communities. From providing educational scholarships to launching innovative mentorship programs, we’ve impacted thousands of lives and inspired lasting change
                     </p>
                     <a            href="/about/achievements"
             className="px-6 py-3 md:px-8 md:py-4  text-white font-semibold text-lg rounded-lg bg-green-700"
@@ -314,8 +314,7 @@ const About = () => {
               {images.map((item, index) => (
                 <div
                   key={index}
-                  className="w-[300px] mx-2 flex-shrink-0 cursor-pointer"
-                >
+                  className="w-[300px] mx-2 flex-shrink-0 cursor-pointer">
                   <img
                     src={item.image}
                     alt={`${item.name} - ${item.position}`}
